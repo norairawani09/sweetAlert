@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product; // Import model Product
 use Illuminate\Http\Request;
-// use RealRashid\SweetAlert\Facades\Alert; // Jika Anda sudah beralih ke SweetAlert2 CDN, ini tidak diperlukan lagi
 use Yajra\DataTables\Facades\DataTables; // Untuk DataTables
 
 class ProductController extends Controller
@@ -21,7 +20,7 @@ class ProductController extends Controller
                 ->addColumn('action', function($row){
                     // Tombol Edit dan Delete untuk DataTables
                     $btn = '<a href="'.route('products.edit', $row->id).'" class="edit btn btn-warning btn-sm">Edit</a>';
-                    // Gunakan class .delete-btn dan data-id untuk event delegation JavaScript
+                    // Gunakan class .delete-btn-product dan data-id untuk event delegation JavaScript
                     $btn .= ' <button class="btn btn-danger btn-sm delete-btn-product" data-id="'.$row->id.'">Delete</button>';
                     return $btn;
                 })
